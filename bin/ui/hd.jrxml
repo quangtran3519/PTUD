@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="79e0919e-ac95-4bad-ae9b-91292783aca8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="qlqt"/>
+	<subDataset name="Dataset1" uuid="9f0d5d18-81d7-4991-8cfa-47f6116e4fe4">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="QLQT"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<parameter name="mahd" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT dbo."ChiTietHoaDon"."soLuong",
+	dbo."HoaDon"."maHD",
+	dbo."KhachHang"."tenKH",
+	dbo."KhachHang".sdt,
+	dbo."KhachHang"."diaChi",
+	dbo."NhanVien"."tenNV",
+	dbo."Thuoc"."tenThuoc",
+	dbo."Thuoc"."donVi",
+	dbo."Thuoc"."giaBan",
+	dbo."HoaDon"."ngayLap"
+FROM dbo."ChiTietHoaDon"
+	INNER JOIN dbo."HoaDon" ON 
+	 dbo."ChiTietHoaDon"."maHD" = dbo."HoaDon"."maHD" 
+	INNER JOIN dbo."KhachHang" ON 
+	 dbo."HoaDon"."maKH" = dbo."KhachHang"."maKH" 
+	INNER JOIN dbo."Thuoc" ON 
+	 dbo."ChiTietHoaDon"."maThuoc" = dbo."Thuoc"."maThuoc" ,
+	dbo."NhanVien"
+WHERE 
+	 $X{EQUAL,dbo."HoaDon"."maHD",mahd}]]>
+		</queryString>
+		<field name="soLuong" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="soLuong"/>
+			<property name="com.jaspersoft.studio.field.label" value="soLuong"/>
+		</field>
+		<field name="maHD" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="maHD"/>
+			<property name="com.jaspersoft.studio.field.label" value="maHD"/>
+		</field>
+		<field name="tenKH" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="tenKH"/>
+			<property name="com.jaspersoft.studio.field.label" value="tenKH"/>
+		</field>
+		<field name="sdt" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="sdt"/>
+			<property name="com.jaspersoft.studio.field.label" value="sdt"/>
+		</field>
+		<field name="diaChi" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="diaChi"/>
+			<property name="com.jaspersoft.studio.field.label" value="diaChi"/>
+		</field>
+		<field name="tenNV" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="tenNV"/>
+			<property name="com.jaspersoft.studio.field.label" value="tenNV"/>
+		</field>
+		<field name="tenThuoc" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="tenThuoc"/>
+			<property name="com.jaspersoft.studio.field.label" value="tenThuoc"/>
+		</field>
+		<field name="donVi" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="donVi"/>
+			<property name="com.jaspersoft.studio.field.label" value="donVi"/>
+		</field>
+		<field name="giaBan" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="giaBan"/>
+			<property name="com.jaspersoft.studio.field.label" value="giaBan"/>
+		</field>
+		<field name="ngayLap" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.name" value="ngayLap"/>
+			<property name="com.jaspersoft.studio.field.label" value="ngayLap"/>
+		</field>
+	</subDataset>
+	<subDataset name="Dataset2" uuid="4789bb94-976e-4e96-85b8-380b4ce3db95">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="Dataset3" uuid="59929ebe-49b4-46c6-84a7-a8db585c5608">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="QLQT"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="Dataset4" uuid="7a0f5377-856b-44bf-ab1d-2d1df0001b25">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="Dataset5" uuid="67b3e83d-b734-4110-b9d3-1a0d2446ffb8">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="QLQT"/>
+		<parameter name="mahd" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT dbo."ChiTietHoaDon"."soLuong",
+	dbo."HoaDon"."maHD",
+	dbo."KhachHang"."tenKH",
+	dbo."KhachHang".sdt,
+	dbo."KhachHang"."diaChi",
+	dbo."NhanVien"."tenNV",
+	dbo."Thuoc"."tenThuoc",
+	dbo."Thuoc"."donVi",
+	dbo."Thuoc"."giaBan",
+	dbo."HoaDon"."ngayLap",
+	dbo."Thuoc"."maThuoc"
+FROM dbo."ChiTietHoaDon"
+	INNER JOIN dbo."HoaDon" ON 
+	 dbo."ChiTietHoaDon"."maHD" = dbo."HoaDon"."maHD" 
+	INNER JOIN dbo."KhachHang" ON 
+	 dbo."HoaDon"."maKH" = dbo."KhachHang"."maKH" 
+	INNER JOIN dbo."Thuoc" ON 
+	 dbo."ChiTietHoaDon"."maThuoc" = dbo."Thuoc"."maThuoc" ,
+	dbo."NhanVien"
+WHERE 
+	 dbo."HoaDon"."maHD" = $P{mahd}]]>
+		</queryString>
+		<field name="soLuong" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="soLuong"/>
+			<property name="com.jaspersoft.studio.field.label" value="soLuong"/>
+		</field>
+		<field name="maHD" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="maHD"/>
+			<property name="com.jaspersoft.studio.field.label" value="maHD"/>
+		</field>
+		<field name="tenKH" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="tenKH"/>
+			<property name="com.jaspersoft.studio.field.label" value="tenKH"/>
+		</field>
+		<field name="sdt" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="sdt"/>
+			<property name="com.jaspersoft.studio.field.label" value="sdt"/>
+		</field>
+		<field name="diaChi" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="diaChi"/>
+			<property name="com.jaspersoft.studio.field.label" value="diaChi"/>
+		</field>
+		<field name="tenNV" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="tenNV"/>
+			<property name="com.jaspersoft.studio.field.label" value="tenNV"/>
+		</field>
+		<field name="tenThuoc" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="tenThuoc"/>
+			<property name="com.jaspersoft.studio.field.label" value="tenThuoc"/>
+		</field>
+		<field name="donVi" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="donVi"/>
+			<property name="com.jaspersoft.studio.field.label" value="donVi"/>
+		</field>
+		<field name="giaBan" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="giaBan"/>
+			<property name="com.jaspersoft.studio.field.label" value="giaBan"/>
+		</field>
+		<field name="ngayLap" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.name" value="ngayLap"/>
+			<property name="com.jaspersoft.studio.field.label" value="ngayLap"/>
+		</field>
+		<field name="maThuoc" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="maThuoc"/>
+			<property name="com.jaspersoft.studio.field.label" value="maThuoc"/>
+		</field>
+		<group name="maThuoc">
+			<groupExpression><![CDATA[$F{maThuoc}]]></groupExpression>
+		</group>
+		<group name="tenThuoc">
+			<groupExpression><![CDATA[$F{tenThuoc}]]></groupExpression>
+		</group>
+		<group name="donVi">
+			<groupExpression><![CDATA[$F{donVi}]]></groupExpression>
+		</group>
+		<group name="soLuong">
+			<groupExpression><![CDATA[$F{soLuong}]]></groupExpression>
+		</group>
+		<group name="giaBan">
+			<groupExpression><![CDATA[$F{giaBan}]]></groupExpression>
+		</group>
+	</subDataset>
+	<subDataset name="Dataset6" uuid="f9e9ceee-7c50-4cd8-9679-10988b1eccb3">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="QLQT"/>
+		<property name="com.jaspersoft.studio.data.sql.tables">
+			<![CDATA[ZGJvLiJDaGlUaWV0SG9hRG9uIiAsMTUsMTA4LDFmYmNlMWZjLWU1ZjItNGE4NS04Y2I3LWJmMDJk
+NjgwMDljYTtkYm8uIlRodW9jIiAsMTYxLDE1LDJmY2UwYjViLTZjMDEtNDU5My04ZjVlLTU1NzA1
+NjQzMzgwMDs=]]>
+		</property>
+		<parameter name="mahd" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT dbo."Thuoc"."tenThuoc",
+	dbo."Thuoc"."donVi",
+	dbo."ChiTietHoaDon"."soLuong",
+	dbo."Thuoc"."giaBan"
+FROM dbo."ChiTietHoaDon"
+	INNER JOIN dbo."Thuoc" ON 
+	 dbo."ChiTietHoaDon"."maThuoc" = dbo."Thuoc"."maThuoc" 
+WHERE 
+	dbo."ChiTietHoaDon"."maHD"= $P{mahd}]]>
+		</queryString>
+		<field name="tenThuoc" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="tenThuoc"/>
+			<property name="com.jaspersoft.studio.field.label" value="tenThuoc"/>
+		</field>
+		<field name="donVi" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="donVi"/>
+			<property name="com.jaspersoft.studio.field.label" value="donVi"/>
+		</field>
+		<field name="soLuong" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="soLuong"/>
+			<property name="com.jaspersoft.studio.field.label" value="soLuong"/>
+		</field>
+		<field name="giaBan" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="giaBan"/>
+			<property name="com.jaspersoft.studio.field.label" value="giaBan"/>
+		</field>
+	</subDataset>
+	<parameter name="mahd" class="java.lang.String"/>
+	<parameter name="tongtien" class="java.lang.String"/>
+	<parameter name="ghichu" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT dbo."ChiTietHoaDon"."soluong",
+	dbo."HoaDon"."maHD",
+	dbo."KhachHang"."tenKH",
+	dbo."KhachHang".sdt,
+	dbo."KhachHang"."diaChi",
+	dbo."NhanVien"."tenNV",
+	dbo."Thuoc"."tenThuoc",
+	dbo."Thuoc"."donVi",
+	dbo."Thuoc"."giaBan",
+	dbo."HoaDon"."ngayLap",
+	dbo."Thuoc"."giaBan" * dbo."ChiTietHoaDon"."soluong" AS tt,
+	dbo."NhanVien"."caLamViec"
+FROM dbo."ChiTietHoaDon"
+	INNER JOIN dbo."HoaDon" ON 
+	 dbo."ChiTietHoaDon"."maHD" = dbo."HoaDon"."maHD" 
+	INNER JOIN dbo."KhachHang" ON 
+	 dbo."HoaDon"."maKH" = dbo."KhachHang"."maKH" 
+	INNER JOIN dbo."Thuoc" ON 
+	 dbo."ChiTietHoaDon"."maThuoc" = dbo."Thuoc"."maThuoc" 
+	INNER JOIN dbo."NhanVien" ON 
+	 dbo."NhanVien"."maNV" = dbo."HoaDon"."maNV" 
+WHERE 
+	 dbo."HoaDon"."maHD" = $P{mahd}]]>
+	</queryString>
+	<field name="soLuong" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="soluong"/>
+		<property name="com.jaspersoft.studio.field.label" value="soluong"/>
+	</field>
+	<field name="maHD" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="maHD"/>
+		<property name="com.jaspersoft.studio.field.label" value="maHD"/>
+	</field>
+	<field name="tenKH" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tenKH"/>
+		<property name="com.jaspersoft.studio.field.label" value="tenKH"/>
+	</field>
+	<field name="sdt" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="sdt"/>
+		<property name="com.jaspersoft.studio.field.label" value="sdt"/>
+	</field>
+	<field name="diaChi" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="diaChi"/>
+		<property name="com.jaspersoft.studio.field.label" value="diaChi"/>
+	</field>
+	<field name="tenNV" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tenNV"/>
+		<property name="com.jaspersoft.studio.field.label" value="tenNV"/>
+	</field>
+	<field name="tenThuoc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tenThuoc"/>
+		<property name="com.jaspersoft.studio.field.label" value="tenThuoc"/>
+	</field>
+	<field name="donVi" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="donVi"/>
+		<property name="com.jaspersoft.studio.field.label" value="donVi"/>
+	</field>
+	<field name="giaBan" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="giaBan"/>
+		<property name="com.jaspersoft.studio.field.label" value="giaBan"/>
+	</field>
+	<field name="ngayLap" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="ngayLap"/>
+		<property name="com.jaspersoft.studio.field.label" value="ngayLap"/>
+	</field>
+	<field name="tt" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="tt"/>
+		<property name="com.jaspersoft.studio.field.label" value="tt"/>
+	</field>
+	<field name="caLamViec" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="caLamViec"/>
+		<property name="com.jaspersoft.studio.field.label" value="caLamViec"/>
+	</field>
+	<group name="soLuong">
+		<groupExpression><![CDATA[$F{soLuong}]]></groupExpression>
+	</group>
+	<group name="maHD">
+		<groupExpression><![CDATA[$F{maHD}]]></groupExpression>
+	</group>
+	<group name="tenKH">
+		<groupExpression><![CDATA[$F{tenKH}]]></groupExpression>
+	</group>
+	<group name="sdt">
+		<groupExpression><![CDATA[$F{sdt}]]></groupExpression>
+	</group>
+	<group name="diaChi">
+		<groupExpression><![CDATA[$F{diaChi}]]></groupExpression>
+	</group>
+	<group name="tenNV">
+		<groupExpression><![CDATA[$F{tenNV}]]></groupExpression>
+	</group>
+	<group name="tenThuoc">
+		<groupExpression><![CDATA[$F{tenThuoc}]]></groupExpression>
+	</group>
+	<group name="donVi">
+		<groupExpression><![CDATA[$F{donVi}]]></groupExpression>
+	</group>
+	<group name="giaBan">
+		<groupExpression><![CDATA[$F{giaBan}]]></groupExpression>
+	</group>
+	<group name="ngayLap">
+		<groupExpression><![CDATA[$F{ngayLap}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="0" width="380" height="30" uuid="5906c605-acd5-4a68-a462-80071d7bfeff"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NHÀ THUỐC NGUYỄN VĂN BẢO 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="31" width="410" height="30" uuid="c03204d4-a66d-4cfe-bb13-6b231029d6a9"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Địa chỉ : 12 Nguyễn Văn Bảo Gò Vấp , thành phố Hồ Chí Minh]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="100" splitType="Stretch">
+			<textField>
+				<reportElement x="110" y="10" width="100" height="30" uuid="1e860511-d005-47f6-8518-2d9a5b4c63c1"/>
+				<textFieldExpression><![CDATA[$P{mahd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="100" height="30" uuid="9838a99c-1955-4643-9535-f22fb52c2e78"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MÃ HÓA ĐƠN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="100" height="30" uuid="77dddef4-e272-42a8-857b-e4c805c5e809"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NGÀY LẬP]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="40" width="100" height="30" uuid="d73a98eb-713b-4553-948b-cce1173801bb"/>
+				<textFieldExpression><![CDATA[$F{ngayLap}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="70" width="100" height="30" uuid="09030268-04a6-45a2-b1b1-cd4f3661cab3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TÊN KHÁCH HÀNG:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="70" width="100" height="30" uuid="df066a10-0b6e-47c0-901c-7f893146901c"/>
+				<textFieldExpression><![CDATA[$F{tenKH}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="173" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="b41cc3a9-d721-4662-82dd-7982a06e0364"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ĐỊA CHỈ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="0" width="100" height="30" uuid="4225291b-32b7-4bbe-ae62-29d97a0ef04f"/>
+				<textFieldExpression><![CDATA[$F{diaChi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="30" width="100" height="30" uuid="cabc3c40-0e48-4a0e-a6a5-33fa7470564a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SĐT:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="30" width="100" height="30" uuid="0f2d878d-a0c4-477b-9726-adb46d6b92b7"/>
+				<textFieldExpression><![CDATA[$F{sdt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="60" width="100" height="30" uuid="c92f9217-1253-4578-bdfb-9a490cd3153a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NHÂN VIÊN:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="60" width="100" height="30" uuid="f464974d-cf40-4b95-82d9-a97941ab3de9"/>
+				<textFieldExpression><![CDATA[$F{tenNV}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="137" width="100" height="30" uuid="ea510656-0437-4b36-832c-c597f6e55239"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tên thuốc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="137" width="100" height="30" uuid="e4ee39d2-70be-44cd-9cfd-acf0f1404216"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Đơn vị]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="140" width="100" height="30" uuid="ab8058d4-33e7-4609-aed8-1cff741fa8b0"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Giá bán]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="140" width="100" height="30" uuid="13d3e339-aa16-4265-8c7d-ce94e5a6b032"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Số lượng]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="140" width="100" height="30" uuid="b606c883-d5da-4f32-af13-fd9aa16dbfe5"/>
+				<text><![CDATA[Thành tiền]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="90" width="100" height="30" uuid="8ef42726-1cd2-48b5-93de-9bd80945aa34"/>
+				<text><![CDATA[CA LÀM VIỆC:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="90" width="100" height="30" uuid="6b39fa8c-305c-43e4-a5a6-aa9c26404288"/>
+				<textFieldExpression><![CDATA[$F{caLamViec}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="360" y="0" width="100" height="30" uuid="353a0e07-7550-4428-875d-7e06e2b18dbd"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{soLuong}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="0" width="100" height="30" uuid="67895d39-edcf-4642-87a3-594ac58cbe90"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{giaBan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="100" height="30" uuid="210a226d-1002-406b-823c-5eeca9990d10"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{donVi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="613ba46c-5a04-4e37-b674-af45f6777c5a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tenThuoc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="475" y="0" width="100" height="30" uuid="506c49b6-232f-4c2b-a880-94bc27550664"/>
+				<textFieldExpression><![CDATA[$F{tt}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="17" splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="72" splitType="Stretch">
+			<textField>
+				<reportElement x="420" y="42" width="100" height="30" uuid="b18c6cc7-1734-4bac-8c5b-1eb2abb778d8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tenNV}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="370" y="0" width="100" height="30" uuid="d057d79c-8a48-488c-bd98-705bbf3b0e56"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Tổng tiền]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="470" y="0" width="100" height="30" uuid="7d50b011-5d51-438c-9318-ab972b308582"/>
+				<textFieldExpression><![CDATA[$P{tongtien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="100" height="30" uuid="58c9d63a-b69e-4d40-ab08-df2b42c44c3d"/>
+				<textFieldExpression><![CDATA[$P{ghichu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="38" height="13" uuid="5ffaa9dc-ac80-44ac-b57e-2d24c429d715"/>
+				<text><![CDATA[Ghi chú :]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
